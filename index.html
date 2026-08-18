@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diário de Bordo — Doutoramento</title>
+<style>
+:root{
+  --bg:#f7f5f1; --card:#fff; --text:#252525; --muted:#707070;
+  --accent:#5b6472; --line:#d9d6cf; --soft:#ece9e2;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:var(--bg);color:var(--text);line-height:1.6}
+header{background:var(--text);color:white;padding:70px 24px 55px}
+header .wrap,.container{max-width:1050px;margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.78rem;opacity:.7}
+h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:1.05;margin:12px 0}
+.subtitle{font-size:1.1rem;max-width:700px;color:#ddd}
+nav{position:sticky;top:0;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);z-index:5}
+.nav{max-width:1050px;margin:auto;display:flex;gap:8px;overflow:auto;padding:10px 16px}
+.nav button{border:0;background:transparent;padding:9px 13px;cursor:pointer;border-radius:8px;white-space:nowrap}
+.nav button:hover,.nav button.active{background:var(--soft)}
+.container{padding:35px 20px 80px}
+section{display:none}.active-section{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+.card h3{margin-top:0}
+.muted{color:var(--muted)}
+.timeline{border-left:2px solid var(--line);margin:25px 0 0 15px;padding-left:28px}
+.event{position:relative;margin:0 0 28px}
+.event:before{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--text);
+left:-35px;top:7px}
+.date{font-weight:700;font-size:.9rem}
+.tag{display:inline-block;background:var(--soft);padding:4px 9px;border-radius:999px;font-size:.75rem;margin:3px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+input,textarea,select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;font:inherit;background:white}
+textarea{min-height:130px;resize:vertical}
+button.primary{background:var(--text);color:white;border:0;padding:11px 17px;border-radius:9px;cursor:pointer}
+button.secondary{background:var(--soft);border:0;padding:11px 17px;border-radius:9px;cursor:pointer}
+.entry{margin-bottom:18px}
+.entry-header{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}
+.small{font-size:.85rem}
+footer{text-align:center;color:var(--muted);padding:30px}
+.hidden{display:none!important}
+@media(max-width:600px){header{padding:45px 20px}.container{padding-top:25px}.entry-header{display:block}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Diário de investigação • Setembro 2025 —</div>
+    <h1>Diário de Bordo<br>do Doutoramento</h1>
+    <p class="subtitle">Um registo cronológico do percurso de investigação, aprendizagem, decisões, dificuldades, descobertas e produção científica.</p>
+  </div>
+</header>
+
+<nav>
+  <div class="nav">
+    <button class="active" onclick="showSection('inicio',this)">Início</button>
+    <button onclick="showSection('timeline',this)">Linha do tempo</button>
+    <button onclick="showSection('projeto',this)">O projeto</button>
+    <button onclick="showSection('diario',this)">Diário</button>
+    <button onclick="showSection('orientacao',this)">Orientação</button>
+    <button onclick="showSection('producao',this)">Produção científica</button>
+    <button onclick="showSection('conferencias',this)">Conferências</button>
+    <button onclick="showSection('palestras',this)">Palestras</button>
+    <button onclick="showSection('materias',this)">Matérias</button>
+    <button onclick="showSection('artigos',this)">Artigos relevantes</button>
+    <button onclick="showSection('reflexoes',this)">Reflexões</button>
+    <button onclick="showSection('gestao',this)">Gerir</button>
+  </div>
+</nav>
+
+<main class="container">
+
+<section id="inicio" class="active-section">
+  <div class="card">
+    <h2>Sobre este diário</h2>
+    <p>Este espaço acompanha o doutoramento desde setembro de 2025, preservando não apenas os resultados, mas também o processo que levou às decisões tomadas ao longo da investigação.</p>
+    <p><strong>Investigadora:</strong> Sheila Correia Ramos</p>
+    <p><strong>Instituição:</strong> Instituto Superior Técnico — Universidade de Lisboa</p>
+    <p><strong>Início:</strong> Setembro de 2025</p>
+  </div>
+  <br>
+  <div class="grid">
+    <div class="card"><h3>🔬 Projeto</h3><p class="muted">Evolução do tema, problema, pergunta, objetivos e desenho da investigação.</p></div>
+    <div class="card"><h3>📚 Literatura</h3><p class="muted">Leituras, conceitos, revisão, JBI, PCC, PRISMA-ScR e decisões metodológicas.</p></div>
+    <div class="card"><h3>👥 Orientação</h3><p class="muted">Reuniões, feedback, decisões e tarefas.</p></div>
+    <div class="card"><h3>🌱 Reflexões</h3><p class="muted">Aprendizagens, dificuldades, mudanças de perspetiva e conquistas.</p></div>
+  </div>
+</section>
+
+<section id="timeline">
+  <h2>Linha do tempo</h2>
+  <p class="muted">Os principais marcos do percurso. Esta timeline pode ser atualizada à medida que o doutoramento avança.</p>
+  <div class="timeline">
+    <div class="event"><div class="date">Setembro de 2025</div><h3>Início do doutoramento</h3><p>Entrada no programa e início do percurso de investigação.</p></div>
+    <div class="event"><div class="date">2025–2026</div><h3>Exploração e desenvolvimento inicial</h3><p>Primeiras leituras, disciplinas, reuniões e desenvolvimento do projeto.</p></div>
+    <div class="event"><div class="date">2026</div><h3>Consolidação metodológica</h3><p>Revisão da literatura, JBI/PCC, PRISMA-ScR, screening, produção científica e ética.</p></div>
+    <div class="event"><div class="date">Próximos anos</div><h3>Em construção</h3><p>Novos marcos serão acrescentados durante o percurso.</p></div>
+  </div>
+</section>
+
+<section id="projeto">
+  <h2>O projeto de investigação</h2>
+  <div class="card">
+    <h3>Pergunta de investigação</h3>
+    <p>Como podem narrativas digitais não lineares/interativas ser utilizadas para promover a consciencialização e a reflexão crítica sobre a violência contra as mulheres?</p>
+  </div>
+  <br>
+  <div class="grid">
+    <div class="card"><h3>Problema</h3><p>Registar aqui a evolução da formulação do problema de investigação.</p></div>
+    <div class="card"><h3>Objetivos</h3><p>Registar os objetivos gerais e específicos e as suas alterações ao longo do tempo.</p></div>
+    <div class="card"><h3>Conceitos</h3><p>Narrativas multilineares, interatividade, agência, violência contra as mulheres, reflexão crítica, entre outros.</p></div>
+    <div class="card"><h3>Metodologia</h3><p>Registar as decisões metodológicas e a razão pela qual foram tomadas.</p></div>
+  </div>
+</section>
+
+<section id="diario">
+  <h2>Diário cronológico</h2>
+  <p class="muted">As entradas criadas nesta página ficam guardadas neste navegador.</p>
+  <div class="toolbar">
+    <input id="search" placeholder="Pesquisar no diário..." oninput="renderEntries()">
+    <select id="filter" onchange="renderEntries()">
+      <option value="">Todas as categorias</option>
+      <option>Investigação</option><option>Orientação</option><option>Formação</option>
+      <option>Produção científica</option><option>Conferências</option><option>Palestras</option><option>Matérias</option><option>Artigos relevantes</option><option>Metodologia</option><option>Reflexão</option><option>Administrativo</option>
+    </select>
+  </div>
+  <div id="entries"></div>
+</section>
+
+<section id="orientacao">
+  <h2>Reuniões de orientação</h2>
+  <p>Use esta área para documentar o que foi discutido, o feedback recebido, as decisões tomadas e as tarefas definidas.</p>
+  <div class="card">
+    <h3>Modelo de reunião</h3>
+    <p><strong>Data:</strong> ____</p>
+    <p><strong>Participantes:</strong> ____</p>
+    <p><strong>O que foi discutido:</strong> ____</p>
+    <p><strong>Feedback:</strong> ____</p>
+    <p><strong>Decisões:</strong> ____</p>
+    <p><strong>Próximos passos:</strong> ____</p>
+  </div>
+</section>
+
+<section id="producao">
+  <h2>Produção científica</h2>
+  <div class="grid">
+    <div class="card"><h3>Artigos</h3><p>Artigos em preparação, submissão, revisão ou publicação.</p></div>
+    <div class="card"><h3>Conferências</h3><p>Comunicações, posters, workshops e apresentações.</p></div>
+    <div class="card"><h3>Revisão de literatura</h3><p>Estado da arte, scoping review e resultados.</p></div>
+  </div>
+</section>
+
+
+<section id="conferencias">
+<h2>Conferências</h2>
+<p class="muted">Registo de conferências, congressos, workshops e eventos científicos relevantes para o doutoramento.</p>
+<div class="grid">
+<div class="card"><h3>Evento</h3><p><strong>Nome:</strong> ____</p><p><strong>Data:</strong> ____</p><p><strong>Local:</strong> ____</p><p><strong>Participação:</strong> apresentação / poster / participante</p><p><strong>Relevância para o projeto:</strong> ____</p></div>
+<div class="card"><h3>Aprendizagens</h3><p>O que aprendi, quais ideias podem inspirar a investigação e que contactos foram estabelecidos.</p></div>
+</div>
+</section>
+
+<section id="palestras">
+<h2>Palestras e seminários</h2>
+<p class="muted">Registo de palestras, seminários, aulas abertas e apresentações de investigadores relevantes.</p>
+<div class="card"><h3>Modelo</h3><p><strong>Título:</strong> ____</p><p><strong>Palestrante:</strong> ____</p><p><strong>Data:</strong> ____</p><p><strong>Instituição:</strong> ____</p><p><strong>Ideias principais:</strong> ____</p><p><strong>Relação com o doutoramento:</strong> ____</p><p><strong>Referências/projetos a explorar:</strong> ____</p></div>
+</section>
+
+<section id="materias">
+<h2>Matérias e conteúdos relevantes</h2>
+<p class="muted">Matérias jornalísticas, entrevistas, reportagens, podcasts, vídeos e outros conteúdos relacionados com a investigação.</p>
+<div class="grid">
+<div class="card"><h3>Conteúdo</h3><p><strong>Título:</strong> ____</p><p><strong>Fonte:</strong> ____</p><p><strong>Data:</strong> ____</p><p><strong>Link:</strong> ____</p></div>
+<div class="card"><h3>Relevância</h3><p>Registe aqui a relação do conteúdo com o tema da investigação.</p></div>
+</div>
+</section>
+
+<section id="artigos">
+<h2>Artigos relevantes</h2>
+<p class="muted">Biblioteca pessoal dos artigos que influenciaram, orientaram ou podem contribuir para o doutoramento.</p>
+<div class="card"><h3>Ficha do artigo</h3><p><strong>Referência:</strong> ____</p><p><strong>Autores:</strong> ____</p><p><strong>Ano:</strong> ____</p><p><strong>DOI/Link:</strong> ____</p><p><strong>Temas:</strong> ____</p><p><strong>Resumo das ideias principais:</strong> ____</p><p><strong>Contributo para o meu projeto:</strong> ____</p><p><strong>Estado:</strong> para ler / lido / utilizado na tese</p></div>
+</section>
+
+<section id="reflexoes">
+  <h2>Reflexões</h2>
+  <div class="card">
+    <h3>O processo, para além dos resultados</h3>
+    <p>Use este espaço para registar aquilo que aprendeu, o que foi difícil, o que mudou na sua forma de pensar e os momentos que marcaram o percurso.</p>
+  </div>
+</section>
+
+<section id="gestao">
+  <h2>Gerir o diário</h2>
+  <div class="card">
+    <h3>Nova entrada</h3>
+    <label>Data</label><br><input type="date" id="date"><br><br>
+    <label>Título</label><br><input id="title" placeholder="Ex.: Reunião de orientação — revisão da metodologia"><br><br>
+    <label>Categoria</label><br>
+    <select id="category"><option>Investigação</option><option>Orientação</option><option>Formação</option><option>Produção científica</option><option>Conferências</option><option>Palestras</option><option>Matérias</option><option>Artigos relevantes</option><option>Metodologia</option><option>Reflexão</option><option>Administrativo</option></select><br><br>
+    <label>Conteúdo</label><br><textarea id="content" placeholder="O que aconteceu? O que foi decidido? O que aprendi?"></textarea><br><br>
+    <button class="primary" onclick="addEntry()">Guardar entrada</button>
+    <button class="secondary" onclick="exportData()">Exportar diário</button>
+    <button class="secondary" onclick="document.getElementById('importFile').click()">Importar diário</button>
+    <input id="importFile" class="hidden" type="file" accept=".json" onchange="importData(event)">
+  </div>
+</section>
+
+</main>
+
+<footer>Diário de Bordo do Doutoramento • Iniciado em setembro de 2025</footer>
+
+<script>
+const KEY='diario_doutoramento_sheila';
+function showSection(id,btn){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active-section'));
+  document.getElementById(id).classList.add('active-section');
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function getEntries(){return JSON.parse(localStorage.getItem(KEY)||'[]')}
+function saveEntries(x){localStorage.setItem(KEY,JSON.stringify(x))}
+function addEntry(){
+  const date=document.getElementById('date').value;
+  const title=document.getElementById('title').value.trim();
+  const category=document.getElementById('category').value;
+  const content=document.getElementById('content').value.trim();
+  if(!date||!title||!content){alert('Preencha a data, o título e o conteúdo.');return}
+  const entries=getEntries();
+  entries.push({id:Date.now(),date,title,category,content});
+  entries.sort((a,b)=>b.date.localeCompare(a.date));
+  saveEntries(entries);
+  document.getElementById('title').value='';
+  document.getElementById('content').value='';
+  renderEntries();
+  alert('Entrada guardada.');
+}
+function deleteEntry(id){
+  if(confirm('Apagar esta entrada?')){
+    saveEntries(getEntries().filter(e=>e.id!==id));renderEntries();
+  }
+}
+function renderEntries(){
+  const q=document.getElementById('search').value.toLowerCase();
+  const f=document.getElementById('filter').value;
+  const box=document.getElementById('entries');
+  const data=getEntries().filter(e=>(!f||e.category===f)&&
+    (e.title.toLowerCase().includes(q)||e.content.toLowerCase().includes(q)||e.category.toLowerCase().includes(q)));
+  if(!data.length){box.innerHTML='<div class="card"><p class="muted">Ainda não existem entradas correspondentes.</p></div>';return}
+  box.innerHTML=data.map(e=>`
+    <article class="card entry">
+      <div class="entry-header">
+        <div><div class="date">${new Date(e.date+'T12:00:00').toLocaleDateString('pt-PT')}</div>
+        <h3>${escapeHtml(e.title)}</h3></div>
+        <span class="tag">${escapeHtml(e.category)}</span>
+      </div>
+      <p>${escapeHtml(e.content).replace(/\n/g,'<br>')}</p>
+      <button class="secondary small" onclick="deleteEntry(${e.id})">Apagar</button>
+    </article>`).join('');
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function exportData(){
+  const blob=new Blob([JSON.stringify(getEntries(),null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='diario-doutoramento-backup.json';a.click();URL.revokeObjectURL(a.href);
+}
+function importData(ev){
+  const file=ev.target.files[0];if(!file)return;
+  const r=new FileReader();
+  r.onload=()=>{try{const data=JSON.parse(r.result);if(!Array.isArray(data))throw 0;saveEntries(data);renderEntries();alert('Diário importado.')}catch(e){alert('Ficheiro inválido.')}};
+  r.readAsText(file);
+}
+renderEntries();
+</script>
+</body>
+</html>
